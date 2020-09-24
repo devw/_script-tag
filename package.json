@@ -5,6 +5,12 @@
     "repository": "git@github.com:devw/script-tag.git",
     "author": "Antonio Pierro <antonio.pierro@gmail.com>",
     "license": "MIT",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prebuild": "rm -rf dist",
+        "build": "webpack",
+        "postbuild": "mv dist docs"
+    },
     "dependencies": {
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12"
