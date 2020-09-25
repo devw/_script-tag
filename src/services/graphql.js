@@ -1,5 +1,5 @@
-export const query = (token) => {
-    console.log("##### fetch");
+export const graphql = (token) => {
+    console.log("##### fetching #####");
     const url = `/admin/api/2020-07/graphql.json`;
     const query = `{
         shop {

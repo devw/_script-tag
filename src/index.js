@@ -1,6 +1,5 @@
-import { query } from "./query";
+import { graphql } from "./services/graphql";
 import { modalComponent } from "./components/modal/modal";
 
-window["MyScript"] = { query: query };
-
+globalThis["MyScript"] = { graphql: graphql };
 document.body.appendChild(modalComponent());
