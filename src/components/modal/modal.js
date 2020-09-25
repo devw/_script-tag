@@ -1,6 +1,6 @@
 import "./modal.css";
 
-window.addEventListener("DOMContentLoaded", (_) => {
+window.addEventListener("load", (_) => {
     console.log(document.querySelector(".site-header__account"));
 });
 
