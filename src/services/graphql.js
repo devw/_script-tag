@@ -1,23 +1,6 @@
-export const graphql = (token) => {
+export const graphql = (query) => (token) => {
     console.log("##### fetching #####");
-    const url = `/admin/api/2020-07/graphql.json`;
-    const query = `{
-        shop {
-          products(first: 5) {
-            edges {
-              node {
-                id
-                handle
-              }
-            }
-            pageInfo {
-              hasNextPage
-            }
-          }
-        }
-    }`;
-
-    fetch(url, {
+    fetch("/admin/api/2020-07/graphql.json", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

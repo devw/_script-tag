@@ -13,3 +13,5 @@ export const productsQuery = `{
       }
     }
 }`;
+
+export const test = 2;
