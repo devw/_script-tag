@@ -1,5 +1,4 @@
 export const graphql = (query) => (token) => {
-    console.log("##### fetching #####");
     fetch("/admin/api/2020-07/graphql.json", {
         method: "POST",
         headers: {
