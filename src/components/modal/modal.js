@@ -1,17 +1,7 @@
 import "./modal.css";
 
-const handleAccountClick = (e) => {
-    e.preventDefault();
-    document.querySelector(".bg-modal").style.display = "flex";
-};
-
 window.addEventListener("DOMContentLoaded", (_) => {
-    document
-        .querySelector(".site-header__account")
-        .addEventListener("click", handleAccountClick);
-    document.querySelector(".close").addEventListener("click", () => {
-        document.querySelector(".bg-modal").style.display = "none";
-    });
+    console.log(document.querySelector(".site-header__account"));
 });
 
 export const modalComponent = () => {
