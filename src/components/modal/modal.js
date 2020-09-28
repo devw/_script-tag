@@ -1,14 +1,8 @@
 import "./modal.css";
+import html from "./modal.html";
 
 export const modalComponent = () => {
     const element = document.createElement("div");
-    element.innerHTML = `
-        <div class="bg-modal">
-            <div class="content-modal">
-                <div class="close">+</div>
-            </div>
-        </div>
-    `;
-
+    element.innerHTML = html;
     return element;
 };
