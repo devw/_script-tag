@@ -1,0 +1,99 @@
+.quickview {
+    position: fixed;
+    padding: 10px;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    z-index: 100;
+    -webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-popup {
+    background-color: white;
+    text-align: center;
+    padding: 22px;
+    padding-bottom: 32px;
+    max-width: 530px;
+}
+.account-popup__error {
+    display: none;
+    // background-color: $light-color;
+    // color: $primary-color;
+    margin: auto;
+    width: 100%;
+    line-height: 22px;
+    padding: 7px 0;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.account-popup__final-message {
+    display: none;
+}
+.account-popup--final-state {
+    .account-popup__initial-message {
+        display: none;
+    }
+    .account-popup__final-message {
+        display: block;
+    }
+}
+.account-popup__close {
+    float: right;
+    svg {
+        width: 15px;
+        height: 15px;
+        // stroke: $primary-color;
+    }
+}
+.account-popup__image {
+    width: 180px;
+}
+.account-popup__checkbox {
+    margin-right: 10px;
+}
+
+.account-popup__mandatory-container {
+    margin-top: 10px;
+}
+.account-popup__checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.account-popup__subtitle {
+    margin: 18px 0;
+}
+.account-popup__inputs-container {
+    margin-bottom: 10px;
+    .input-text {
+        // color: $primary-color;
+        border-bottom: 1px solid;
+        padding-left: 2px;
+        font-size: 16px;
+        margin-bottom: 13px;
+        &::placeholder {
+            text-transform: uppercase;
+        }
+    }
+}
+
+// @include av-mq($desk) {
+//     .account-popup__title {
+//         margin: 0 20px;
+//         margin-top: 6px;
+//     }
+// }
+
+// @include av-mq($portable) {
+// }
