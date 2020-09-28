@@ -1,4 +1,5 @@
 const path = require("path");
+require("dotenv").config();
 
 module.exports = {
     entry: "./src/index.js",
@@ -14,7 +15,18 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: ["file-loader"],
+                use: [
+                    {
+                        loader: "img-optimize-loader",
+                        options: {
+                            compress: {
+                                mode: "high",
+                            },
+                            publicPath: process.env.BASE_URL,
+                            name: `[hash].[ext]`,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.html$/i,
@@ -22,14 +34,7 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    // Compiles Sass to CSS
-                    "sass-loader",
-                ],
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
     },
