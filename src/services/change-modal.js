@@ -1,11 +1,11 @@
 import { emailComponent } from "../components/email/email";
 import { registerComponent } from "../components/register/register";
 
-const init = () => {
-    document.querySelector(".main-modal").innerHTML = "";
-    document.querySelector(".bg-modal").style.display = "flex";
-    document.querySelector(".close-modal").addEventListener("click", () => {
-        document.querySelector(".bg-modal").style.display = "none";
+const init = (node) => {
+    node.querySelector(".main-modal").innerHTML = "";
+    node.style.display = "flex";
+    node.querySelector(".close-modal").addEventListener("click", () => {
+        node.style.display = "none";
     });
 };
 
@@ -20,13 +20,14 @@ const initEmail = (node) => {
 
 export const changeModal = {
     email: () => {
-        init();
-        initEmail(
-            document.querySelector(".main-modal").appendChild(emailComponent())
-        );
+        const node = document.querySelector(".bg-modal");
+        init(node);
+        node.querySelector(".main-modal").appendChild(emailComponent());
+        initEmail(node);
     },
     register: () => {
-        init();
-        document.querySelector(".main-modal").appendChild(registerComponent());
+        const node = document.querySelector(".bg-modal");
+        init(node);
+        node.querySelector(".main-modal").appendChild(registerComponent());
     },
 };
