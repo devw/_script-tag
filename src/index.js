@@ -8,4 +8,5 @@ globalThis["MyScript"] = { graphql: graphql(productsQuery) };
 
 document.body.appendChild(modalComponent());
 document.body.appendChild(account());
+
 modalHook();
