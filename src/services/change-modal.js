@@ -9,10 +9,21 @@ const init = () => {
     });
 };
 
+const initEmail = (node) => {
+    const updateValue = (e) =>
+        verifyEmail(e.target.value)
+            ? node.querySelector("button").removeAttribute("disabled")
+            : node.querySelector("button").setAttribute("disabled", "true");
+    const verifyEmail = (e) => /\S+@\S+\.\S+/.test(e);
+    node.querySelector(".input-text").addEventListener("input", updateValue);
+};
+
 export const changeModal = {
     email: () => {
         init();
-        document.querySelector(".main-modal").appendChild(emailComponent());
+        initEmail(
+            document.querySelector(".main-modal").appendChild(emailComponent())
+        );
     },
     register: () => {
         init();
