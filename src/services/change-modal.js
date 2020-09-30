@@ -1,21 +1,21 @@
 import { emailComponent } from "../components/email/email";
 import { registerComponent } from "../components/register/register";
 
-const show = () => {
+const init = () => {
     document.querySelector(".main-modal").innerHTML = "";
     document.querySelector(".bg-modal").style.display = "flex";
-};
-const close = () => {
-    document.querySelector(".bg-modal").style.display = "none";
+    document.querySelector(".close-modal").addEventListener("click", () => {
+        document.querySelector(".bg-modal").style.display = "none";
+    });
 };
 
 export const changeModal = {
     email: () => {
-        show();
+        init();
         document.querySelector(".main-modal").appendChild(emailComponent());
     },
     register: () => {
-        show();
+        init();
         document.querySelector(".main-modal").appendChild(registerComponent());
     },
 };
