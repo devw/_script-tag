@@ -1,7 +1,7 @@
-import "./account.scss";
-import html from "./account.html";
+import "./register.scss";
+import html from "./register.html";
 
-export const account = () => {
+export const registerComponent = () => {
     const element = document.createElement("div");
     element.innerHTML = html;
     return element;
