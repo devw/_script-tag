@@ -1,7 +1,8 @@
+const config = require("./src/config.js");
 const path = require("path");
-require("dotenv").config();
 
 module.exports = {
+    mode: "production",
     entry: "./src/index.js",
     output: {
         filename: "bundle.js",
@@ -22,7 +23,7 @@ module.exports = {
                             compress: {
                                 mode: "high",
                             },
-                            publicPath: process.env.BASE_URL,
+                            publicPath: config.IMAGE_URL,
                             name: `[hash].[ext]`,
                         },
                     },

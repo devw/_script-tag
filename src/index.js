@@ -1,9 +1,6 @@
 import { modalComponent } from "./components/modal/modal";
-import { productsQuery } from "./queries/products.query";
 import { changeModal } from "./services/change-modal";
-import { graphql } from "./services/graphql";
-
-globalThis["MyScript"] = { graphql: graphql(productsQuery) };
+import { storefront } from "./services/storefront";
 document.body.appendChild(modalComponent());
 
-window["MyApp"] = changeModal;
+window["MyApp"] = Object.assign(changeModal, storefront);
