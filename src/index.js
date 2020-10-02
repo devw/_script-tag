@@ -1,6 +1,8 @@
 import { modalComponent } from "./components/modal/modal";
 import { changeModal } from "./services/change-modal";
 import { storefront } from "./services/storefront";
+import { aws } from "./services/aws";
+
 document.body.appendChild(modalComponent());
 
-window["MyApp"] = Object.assign(changeModal, storefront);
+window["AP"] = Object.assign(changeModal, storefront, aws);
