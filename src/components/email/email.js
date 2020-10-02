@@ -1,19 +1,20 @@
 import "./email.scss";
 import html from "./email.html";
-import { changeEmailView } from "../../services/change-modal";
+import { changeEmailView as cv } from "../../services/change-modal";
 
-const toggleButton = (e) =>
-    /\S+@\S+\.\S+/.test(e.target.value)
-        ? node.querySelector("button").removeAttribute("disabled")
-        : node.querySelector("button").setAttribute("disabled", "true");
-
-const validateEmail = () => {
-    changeEmailView(node.querySelector("input").value);
+const toggleButton = (e) => {
+    const btn = node.querySelector("button");
+    const isEmail = /\S+@\S+\.\S+/.test(e.target.value);
+    isEmail
+        ? btn.removeAttribute("disabled")
+        : btn.setAttribute("disabled", "true");
 };
+
+const email = () => node.querySelector("input").value;
 
 const init = (node) => {
     node.querySelector(".input-text").addEventListener("input", toggleButton);
-    node.querySelector("button").addEventListener("click", validateEmail);
+    node.querySelector("button").addEventListener("click", () => cv(email()));
 };
 
 const node = document.createElement("div");
