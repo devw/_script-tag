@@ -1,5 +1,6 @@
 import { emailComponent } from "../components/email/email";
 import { registerComponent } from "../components/register/register";
+import { signinComponent } from "../components/signin/signin";
 
 const popupContainer = ".account-popup__container";
 const popup = ".account-popup";
@@ -33,5 +34,10 @@ export const changeModal = {
         const node = document.querySelector(popup);
         init(node);
         node.querySelector(popupContainer).appendChild(registerComponent());
+    },
+    signin: () => {
+        const node = document.querySelector(popup);
+        init(node);
+        node.querySelector(popupContainer).appendChild(signinComponent());
     },
 };
