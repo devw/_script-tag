@@ -1,7 +1,7 @@
-import "./modal.css";
-import html from "./modal.html";
+import "./popup.scss";
+import html from "./popup.html";
 
-export const modalComponent = () => {
+export const popupComponent = () => {
     const element = document.createElement("div");
     element.innerHTML = html;
     return element;

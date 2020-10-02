@@ -1,7 +1,7 @@
-import "./register.scss";
-import html from "./register.html";
+import "./signin.scss";
+import html from "./signin.html";
 
-export const registerComponent = () => {
+export const signinComponent = () => {
     const element = document.createElement("div");
     element.innerHTML = html;
     return { dom: element, callback: () => {} };

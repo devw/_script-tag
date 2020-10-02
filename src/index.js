@@ -1,8 +1,8 @@
-import { modalComponent } from "./components/modal/modal";
-import { changeModal } from "./services/change-modal";
+import { popupComponent } from "./components/popup/popup";
 import { storefront } from "./services/storefront";
 import { aws } from "./services/aws";
+import { changeComponent } from "./services/change-component";
 
-document.body.appendChild(modalComponent());
+document.body.appendChild(popupComponent());
 
-window["AP"] = Object.assign(changeModal, storefront, aws);
+window["AP"] = Object.assign(changeComponent, storefront, aws);
