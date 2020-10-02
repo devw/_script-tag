@@ -1,6 +1,7 @@
 import "./register.scss";
 import html from "./register.html";
 import { customerCreate } from "../../queries/mutations";
+import { storefront } from "../../services/storefront";
 
 const serializeForm = function () {
     const obj = {};
@@ -19,9 +20,9 @@ const params = () => ({
 });
 
 const init = (node) => {
-    node.querySelector("button").addEventListener("click", function (e) {
-        console.log(params());
-    });
+    node.querySelector("button").addEventListener("click", () =>
+        storefront.registerUser(params())
+    );
 };
 
 const node = document.createElement("div");

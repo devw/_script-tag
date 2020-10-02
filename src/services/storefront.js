@@ -27,5 +27,9 @@ export const storefront = {
         const data = await response.json();
         console.log(JSON.stringify(data));
     },
-    registerUser: async () => {},
+    registerUser: async (options) => {
+        const response = await fetch(config.STOREFRONT_URL, options);
+        const data = await response.json();
+        console.log(JSON.stringify(data));
+    },
 };
