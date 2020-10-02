@@ -27,4 +27,5 @@ export const storefront = {
         const data = await response.json();
         console.log(JSON.stringify(data));
     },
+    registerUser: async () => {},
 };

@@ -1,9 +1,10 @@
-export const activateAccount = ` mutation customerCreate($input: CustomerCreateInput!) {
+export const customerCreate = `mutation customerCreate($input: CustomerCreateInput!) {
   customerCreate(input: $input) {
     customer {
       id
     }
-    userErrors {
+    customerUserErrors {
+      code
       field
       message
     }
