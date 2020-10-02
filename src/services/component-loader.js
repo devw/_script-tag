@@ -10,8 +10,7 @@ const init = (node) => {
     });
 };
 
-// TODO implement MutationObserver, when the dom is updated it should trigger some action
-export const observer = ({ dom, callback }) => {
+export const loadComponent = ({ dom, callback }) => {
     const node = document.querySelector(popup);
     init(node);
     node.querySelector(popupContainer).appendChild(dom);

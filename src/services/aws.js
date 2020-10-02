@@ -1,6 +1,6 @@
 const config = require("../config.js");
 
-const postData = async (url = "", data = {}) => {
+const postData = async (url, data) => {
     const response = await fetch(url, {
         method: "POST",
         mode: "cors",
@@ -17,11 +17,10 @@ const postData = async (url = "", data = {}) => {
 };
 
 export const aws = {
-    validateEmail: (email) => {
-        postData(`${config.AWS}/prod/customers/search`, { email: email }).then(
-            (data) => {
-                console.log(data);
-            }
-        );
+    validateEmail: async (email) => {
+        const resp = await postData(`${config.AWS}/prod/customers/search`, {
+            email: email,
+        });
+        return resp.data;
     },
 };
