@@ -1,9 +1,9 @@
-import { activateAccount } from "../queries/mutations";
+import { customerCreate } from "../queries/mutations";
 
 const config = require("../config.js");
 
 const params = {
-    query: activateAccount,
+    query: customerCreate,
     variables: {
         input: {
             email: `${Math.random().toString().slice(2, 9)}@gmail.com`,
@@ -11,7 +11,8 @@ const params = {
         },
     },
 };
-const optionsQuery = {
+
+const header = (params) => ({
     method: "post",
     headers: {
         "Content-Type": "application/json",
@@ -19,16 +20,16 @@ const optionsQuery = {
         "X-Shopify-Storefront-Access-Token": config.STOREFRONT_TOKEN,
     },
     body: JSON.stringify(params),
-};
+});
 
 export const storefront = {
     activateAccount: async () => {
-        const response = await fetch(config.STOREFRONT_URL, optionsQuery);
+        const response = await fetch(config.STOREFRONT_URL, header(params));
         const data = await response.json();
         console.log(JSON.stringify(data));
     },
-    registerUser: async (options) => {
-        const response = await fetch(config.STOREFRONT_URL, options);
+    registerUser: async (params) => {
+        const response = await fetch(config.STOREFRONT_URL, header(params));
         const data = await response.json();
         console.log(JSON.stringify(data));
     },
