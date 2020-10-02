@@ -1,7 +1,7 @@
 import { popupComponent } from "./components/popup/popup";
-import { changeModal } from "./services/change-modal";
 import { storefront } from "./services/storefront";
 import { aws } from "./services/aws";
+import { changeModal } from "./services/change-modal";
 
 document.body.appendChild(popupComponent());
 
