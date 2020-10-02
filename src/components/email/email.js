@@ -1,6 +1,6 @@
 import "./email.scss";
 import html from "./email.html";
-import { changeEmailView as cv } from "../../services/change-modal";
+import { changeEmailView as cv } from "../../services/change-component";
 
 const toggleButton = (e) => {
     const btn = node.querySelector("button");
