@@ -7,8 +7,6 @@
 }
 .account-popup__error {
     display: none;
-    // background-color: $light-color;
-    // color: $primary-color;
     margin: auto;
     width: 100%;
     line-height: 22px;
@@ -33,7 +31,6 @@
     svg {
         width: 15px;
         height: 15px;
-        // stroke: $primary-color;
     }
 }
 .account-popup__image {
@@ -58,23 +55,11 @@
 .account-popup__inputs-container {
     margin-bottom: 10px;
     .input-text {
-        // color: $primary-color;
         border-bottom: 1px solid;
         padding-left: 2px;
-        font-size: 16px;
         margin-bottom: 13px;
         &::placeholder {
             text-transform: uppercase;
         }
     }
 }
-
-// @include av-mq($desk) {
-//     .account-popup__title {
-//         margin: 0 20px;
-//         margin-top: 6px;
-//     }
-// }
-
-// @include av-mq($portable) {
-// }
