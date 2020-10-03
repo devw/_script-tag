@@ -1,28 +1,11 @@
 import "./register.scss";
 import html from "./register.html";
-import { customerCreate } from "../../queries/mutations";
-import { storefront } from "../../services/storefront";
-
-const serializeForm = function () {
-    const obj = {};
-    const formData = new FormData(node.querySelector("form"));
-    for (let key of formData.keys()) {
-        obj[key] = formData.get(key);
-    }
-    return obj;
-};
-
-const params = () => ({
-    query: customerCreate,
-    variables: {
-        input: serializeForm(),
-    },
-});
+import { registerUser } from "../../services/storefront";
+import { serialize } from "../../utils.js";
 
 const init = (node) => {
-    node.querySelector("button").addEventListener("click", () =>
-        storefront.registerUser(params())
-    );
+    const listener = () => registerUser(serialize(node.querySelector("form")));
+    node.querySelector("button").addEventListener("click", listener);
 };
 
 const node = document.createElement("div");

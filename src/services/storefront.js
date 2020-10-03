@@ -2,17 +2,14 @@ import { customerCreate } from "../queries/mutations";
 
 const config = require("../config.js");
 
-const params = {
-    query: customerCreate,
+const getParams = ({ query, input }) => ({
+    query: query,
     variables: {
-        input: {
-            email: `${Math.random().toString().slice(2, 9)}@gmail.com`,
-            password: "password",
-        },
+        input: input,
     },
-};
+});
 
-const header = (params) => ({
+const getHeader = (params) => ({
     method: "post",
     headers: {
         "Content-Type": "application/json",
@@ -22,15 +19,21 @@ const header = (params) => ({
     body: JSON.stringify(params),
 });
 
+export const registerUser = async (input) => {
+    delete input.confirmPassword; // TO improve
+    const params = getParams({ query: customerCreate, input: input });
+    console.log(params);
+    // const response = await fetch(config.STOREFRONT_URL, getHeader(params));
+    // const data = await response.json();
+    // console.log(JSON.stringify(data));
+};
+export const activateAccount = async () => {
+    const response = await fetch(config.STOREFRONT_URL, getHeader(params));
+    const data = await response.json();
+    console.log(JSON.stringify(data));
+};
+
 export const storefront = {
-    activateAccount: async () => {
-        const response = await fetch(config.STOREFRONT_URL, header(params));
-        const data = await response.json();
-        console.log(JSON.stringify(data));
-    },
-    registerUser: async (params) => {
-        const response = await fetch(config.STOREFRONT_URL, header(params));
-        const data = await response.json();
-        console.log(JSON.stringify(data));
-    },
+    activateAccount: activateAccount,
+    registerUser: registerUser,
 };
