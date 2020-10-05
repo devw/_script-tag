@@ -23,9 +23,13 @@ const getHeader = (body) => ({
 });
 
 const postRequest = async (fetchBody) => {
+    // TO IMPROVE https://codepen.io/danielone/pen/ZGRgGJ
+    const node = document.querySelector(".account-popup__container");
+    node.style.opacity = "0.2";
     const response = await fetch(config.STOREFRONT_URL, getHeader(fetchBody));
     const data = await response.json();
     console.log(JSON.stringify(data));
+    node.style.opacity = "";
 };
 
 export const registerUser = async (formData) => {
