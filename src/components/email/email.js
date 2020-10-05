@@ -1,6 +1,6 @@
 import "./email.scss";
 import html from "./email.html";
-import { changeEmailView as cv } from "../../services/change-component";
+import { changeEmailView } from "../../services/change-component";
 
 const toggleButton = (e) => {
     const btn = node.querySelector("button");
@@ -10,11 +10,11 @@ const toggleButton = (e) => {
         : btn.setAttribute("disabled", "true");
 };
 
-const email = () => node.querySelector("input").value;
+const submitListener = () => changeEmailView(node.querySelector("input").value);
 
 const init = (node) => {
     node.querySelector(".input-text").addEventListener("input", toggleButton);
-    node.querySelector("button").addEventListener("click", () => cv(email()));
+    node.querySelector("button").addEventListener("click", submitListener);
 };
 
 const node = document.createElement("div");
