@@ -9,23 +9,23 @@ const getParams = ({ query, input }) => ({
     },
 });
 
-const getHeader = (params) => ({
+const getHeader = (body) => ({
     method: "post",
     headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
         "X-Shopify-Storefront-Access-Token": config.STOREFRONT_TOKEN,
     },
-    body: JSON.stringify(params),
+    body: JSON.stringify(body),
 });
 
-export const registerUser = async (input) => {
-    delete input.confirmPassword; // TO improve
-    const params = getParams({ query: customerCreate, input: input });
-    console.log(params);
-    // const response = await fetch(config.STOREFRONT_URL, getHeader(params));
-    // const data = await response.json();
-    // console.log(JSON.stringify(data));
+export const registerUser = async (formData) => {
+    const fetchBody = getParams({ query: customerCreate, input: formData });
+    console.log(customerCreate);
+    console.log(formData);
+    const response = await fetch(config.STOREFRONT_URL, getHeader(fetchBody));
+    const data = await response.json();
+    console.log(JSON.stringify(data));
 };
 export const activateAccount = async () => {
     const response = await fetch(config.STOREFRONT_URL, getHeader(params));

@@ -4,10 +4,14 @@ import { registerUser } from "../../services/storefront";
 import { serialize } from "../../utils.js";
 
 const submitListener = () => {
-    const values = serialize(node.querySelector("form"));
-    values.accepts_marketing = values.accepts_marketing === "on";
-    return registerUser(values);
+    //TODO refactoring
+    const formData = serialize(node.querySelector("form"));
+    formData.acceptsMarketing = formData.acceptsMarketing === "on";
+    delete formData.confirmPassword;
+    return registerUser(formData);
 };
+
+//TODO add toggleButton
 
 const init = (node) =>
     node.querySelector("button").addEventListener("click", submitListener);
