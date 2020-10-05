@@ -1,7 +1,7 @@
 import { emailComponent } from "../components/email/email";
 import { registerComponent } from "../components/register/register";
 import { signinComponent } from "../components/signin/signin";
-import { loadComponent } from "./loade-component";
+import { loadComponent } from "./load-component";
 import { aws } from "./aws";
 
 export const changeComponent = {

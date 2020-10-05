@@ -2,7 +2,7 @@ const config = require("./src/config.js");
 const path = require("path");
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: "./src/index.js",
     output: {
         filename: "bundle.js",
