@@ -18,5 +18,6 @@ yarn test
 ## Production
 
 ```
-yarn build
+yarn build // to create the minified bundle.js
+yarn start // to add the scriptTag to your store 
 ```
