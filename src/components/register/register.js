@@ -3,18 +3,23 @@ import html from "./register.html";
 import { registerUser } from "../../services/storefront";
 import { serialize } from "../../utils.js";
 
-const submitListener = () => {
+const submitListener = async () => {
     //TODO refactoring
+    node.style.opacity = "0.2";
     const formData = serialize(node.querySelector("form"));
     formData.acceptsMarketing = formData.acceptsMarketing === "on";
     delete formData.confirmPassword;
-    return registerUser(formData);
+    const result = await registerUser(formData);
+    console.log("registerUser", result);
+    node.style.opacity = "1";
 };
 
 //TODO add toggleButton
 
-const init = (node) =>
+const init = (node) => {
+    node.querySelector("[name=email]").value = sessionStorage.getItem("email");
     node.querySelector("button").addEventListener("click", submitListener);
+};
 
 const node = document.createElement("div");
 node.innerHTML = html;

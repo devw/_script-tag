@@ -10,7 +10,12 @@ const toggleButton = (e) => {
         : btn.setAttribute("disabled", "true");
 };
 
-const submitListener = () => changeEmailView(node.querySelector("input").value);
+const submitListener = () => {
+    const email = node.querySelector("[name=email]").value;
+    sessionStorage.setItem("email", email);
+    node.style.opacity = "0.2";
+    changeEmailView(email);
+};
 
 const init = (node) => {
     node.querySelector(".input-text").addEventListener("input", toggleButton);
