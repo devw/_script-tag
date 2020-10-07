@@ -27,6 +27,7 @@
         "babel-jest": "^26.5.0",
         "jest": "^26.5.0",
         "js-yaml": "^3.14.0",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
+        "shopify-api-node": "^3.4.4"
     }
 }
