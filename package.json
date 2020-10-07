@@ -8,7 +8,8 @@
     "scripts": {
         "test": "jest",
         "prebuild": "rm -rf docs",
-        "build": "webpack; mv dist docs; git checkout docs/index.html"
+        "build": "webpack; mv dist docs; git checkout docs/index.html",
+        "start": "node src/services/shopifyAPI.js"
     },
     "dependencies": {
         "css-loader": "^4.3.0",

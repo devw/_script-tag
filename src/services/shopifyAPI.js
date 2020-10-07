@@ -13,9 +13,8 @@ const shopify = new Shopify({
     password: SHOPIFY_API_SECRET,
 });
 
-const scriptTagCreate = () => {
+const scriptTagCreate = () =>
     shopify.scriptTag.create({ event: "onload", src: SCRIPT_TAG_SRC });
-};
 
 const scriptTagsDelete = (id) => shopify.scriptTag.delete(id);
 
@@ -31,12 +30,7 @@ const clean = async () => {
 };
 
 const create = async () => {
-    const resp = scriptTagCreate();
-    const scripts = await scriptTagsGet();
-    console.log(`ScriptTags' list: ${JSON.stringify(scripts)}`);
-};
-
-const get = async () => {
+    await scriptTagCreate();
     const scripts = await scriptTagsGet();
     console.log(`ScriptTags' list: ${JSON.stringify(scripts)}`);
 };
