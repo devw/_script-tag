@@ -1,7 +1,8 @@
 import { signIn } from "../../src/services/storefront";
-// TODO Refactor is needed because I should not go to the network in the test
+// TODO A refactor is needed because I should not go to the network in the test
+// TODO I need to mock the fetch request
 
-describe("When sign-in through Storefront API (email and password defined)", () => {
+describe("Signing Storefront API with valid information", () => {
     test("It should return a customerAccessTokenCreate property", async () => {
         const formData = { email: "test@test.com", password: "test" };
         const response = await signIn(formData);
@@ -9,7 +10,7 @@ describe("When sign-in through Storefront API (email and password defined)", () 
     });
 });
 
-describe("When sign-in through Storefront API (email and password not defined)", () => {
+describe("Signing Storefront API with invalid information", () => {
     test("It should not return a customerAccessTokenCreate property", async () => {
         const formData = {};
         const response = await signIn(formData);
