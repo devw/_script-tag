@@ -4,7 +4,7 @@ import { registerUser } from "../../services/storefront";
 import { serialize } from "../../utils.js";
 
 const submitListener = async () => {
-    //TODO refactoring
+    //TODO refactoring needed
     node.style.opacity = "0.2";
     const formData = serialize(node.querySelector("form"));
     formData.acceptsMarketing = formData.acceptsMarketing === "on";
@@ -14,11 +14,23 @@ const submitListener = async () => {
     node.style.opacity = "1";
 };
 
-//TODO add toggleButton
+const isFormFilled = (node) => {
+    //TODO there are many other things to check (psw.length > 5, ...)
+    const inputs = serialize(node.querySelector("form"));
+    return Object.values(inputs).every((e) => e.length > 0);
+};
+
+const toggleBtn = (e) => {
+    const btn = node.querySelector("button");
+    isFormFilled(node)
+        ? btn.removeAttribute("disabled")
+        : btn.setAttribute("disabled", "true");
+};
 
 const init = (node) => {
     node.querySelector("[name=email]").value = sessionStorage.getItem("email");
     node.querySelector("button").addEventListener("click", submitListener);
+    node.querySelector("form").addEventListener("input", toggleBtn);
 };
 
 const node = document.createElement("div");
