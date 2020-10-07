@@ -1,5 +1,5 @@
 import "./email.scss";
-import html from "./email.html";
+import html from "./email.hbs";
 import { changeEmailView } from "../../services/change-component";
 
 const toggleButton = (e) => {

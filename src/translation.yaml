@@ -1,0 +1,17 @@
+en:
+    title: Connexion / Inscription
+    subtitle: Enter your email address to continue.
+    email_placeholder: Your email
+    signin_button_text: Submit
+
+fr:
+    title: Connexion / Inscription
+    subtitle: Renseignez votre adresse email pour continuer.
+    email_placeholder: Votre email
+    signin_button_text: Valider
+
+it:
+    title: Connessione / Iscrizione
+    subtitle: Inserisci il tuo indirizzo e-mail per continuare.
+    email_placeholder: La tua email
+    signin_button_text: Invia

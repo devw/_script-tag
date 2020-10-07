@@ -24,7 +24,10 @@ const getHeader = (body) => ({
 });
 
 const postRequest = async (fetchBody) => {
-    const response = await fetch(config.STOREFRONT_URL, getHeader(fetchBody));
+    const response = await fetch(
+        config.STOREFRONT_ENDPOINT,
+        getHeader(fetchBody)
+    );
     return await response.json();
 };
 
@@ -40,7 +43,7 @@ export const signIn = async (formData) => {
     return await postRequest(fetchBody);
 };
 export const activateAccount = async () => {
-    const response = await fetch(config.STOREFRONT_URL, getHeader(params));
+    const response = await fetch(config.STOREFRONT_ENDPOINT, getHeader(params));
     const data = await response.json();
 };
 

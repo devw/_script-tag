@@ -1,14 +1,14 @@
 <img class="account-popup__image" src="images/chien-chat.png">
 <div class="account-popup__title z-h4 heading">
-    Connexion / Inscription.
+    {{title}}
 </div>
 <div class="account-popup__subtitle text t-4">
-    <p>Renseignez&nbsp;votre adresse email&nbsp;pour&nbsp;continuer.</p>
+    <p>{{subtitle}}</p>
 </div>
 <div class="account-popup__error" data-account-error=""></div>
 <div class="account-popup__inputs-container ">
-    <input class="input-text" name="email" placeholder="Votre email" type="email" value="antonio@studiozerance.fr">
+    <input class="input-text" name="email" placeholder="{{email_placeholder}}" type="email">
 </div>
 <div class="account-popup__button">
-    <button class="button button--full button--secondary" data-email-button="" disabled="">Valider</button>
+    <button class="button button--full button--secondary" disabled="">{{signin_button_text}}</button>
 </div>
