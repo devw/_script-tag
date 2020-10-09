@@ -42,12 +42,8 @@ export const signIn = async (formData) => {
     });
     return await postRequest(fetchBody);
 };
-export const activateAccount = async () => {
-    const response = await fetch(config.STOREFRONT_ENDPOINT, getHeader(params));
-    const data = await response.json();
-};
 
 export const storefront = {
-    activateAccount: activateAccount,
     registerUser: registerUser,
+    signIn: signIn,
 };

@@ -1,16 +1,8 @@
 import { emailComponent } from "../components/email/email";
 import { registerComponent } from "../components/register/register";
-import { signinComponent } from "../components/signin/signin";
+import { signInComponent } from "../components/signin/signin";
 import { loadComponent } from "./load-component";
-import { aws } from "./aws";
 
-export const changeComponent = {
-    email: () => loadComponent(emailComponent()),
-    register: () => loadComponent(registerComponent()),
-    signin: () => loadComponent(signinComponent()),
-};
-
-export const changeEmailView = async (email) => {
-    const isValidEmail = await aws.validateEmail(email);
-    isValidEmail ? changeComponent.signin() : changeComponent.register();
-};
+export const email = () => loadComponent(emailComponent());
+export const signIn = () => loadComponent(signInComponent());
+export const register = () => loadComponent(registerComponent());

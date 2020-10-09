@@ -7,16 +7,17 @@
         <p>Renseignez&nbsp;votre adresse email et votre mot de passe&nbsp;pour vous connecter.</p>
     </div>
     <div class="account-popup__error" data-account-error=""></div>
-    <form class="account-popup__inputs-container" data-signin-form="">
+    <form action="javascript:void(0);" class="account-popup__inputs-container">
         <input class="input-text" data-type="email" name="email" placeholder="Votre email" type="email">
         <input class="input-text" data-signin-password="" name="password" placeholder="Votre mot de passe" type="password">
+        <div class="account-popup__button">
+            <button class="button button--full button--secondary">Se connecter</button>
+        </div>
     </form>
-    <div class="account-popup__button">
-        <button class="button button--full button--secondary" data-signin-button="">Se connecter</button>
-    </div>
-    <div class="account-popup__mandatory-container align-left">
+    <!-- TODO -->
+        <!-- <div class="account-popup__mandatory-container align-left">
         <div class="text t-6 underline pointer" data-signin-forgot="">
             Mot de passe oublié
         </div>
-    </div>
+    </div> -->
 </div>

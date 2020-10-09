@@ -1,17 +1,20 @@
 en:
-    title: Connexion / Inscription
-    subtitle: Enter your email address to continue.
-    email_placeholder: Your email
-    signin_button_text: Submit
+    login-register: Login / Register
+    enter-your-email-to-continue: Enter your email address to continue.
+    your-email: Your email
+    sign-in: Submit
+    sign-up: Sign Up
 
 fr:
-    title: Connexion / Inscription
-    subtitle: Renseignez votre adresse email pour continuer.
-    email_placeholder: Votre email
-    signin_button_text: Valider
+    login-register: Connexion / Inscription
+    enter-your-email-to-continue: Renseignez votre adresse email pour continuer.
+    your-email: Votre email
+    sign-in: Se Connecter
+    sign-up: S'inscrire
 
 it:
-    title: Connessione / Iscrizione
-    subtitle: Inserisci il tuo indirizzo e-mail per continuare.
-    email_placeholder: La tua email
-    signin_button_text: Invia
+    login-register: Connessione / Iscrizione
+    enter-your-email-to-continue: Inserisci il tuo indirizzo e-mail per continuare.
+    your-email: La tua email
+    sign-in: Invia
+    sign-up: Registrati

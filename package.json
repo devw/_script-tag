@@ -20,9 +20,7 @@
         "img-optimize-loader": "^1.0.7",
         "sass": "^1.26.11",
         "sass-loader": "^10.0.2",
-        "style-loader": "^1.2.1",
-        "webpack": "^4.44.2",
-        "webpack-cli": "^3.3.12"
+        "style-loader": "^1.2.1"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.11.5",
@@ -31,6 +29,8 @@
         "js-yaml": "^3.14.0",
         "node-fetch": "^2.6.1",
         "prompts": "^2.3.2",
-        "shopify-api-node": "^3.4.4"
+        "shopify-api-node": "^3.4.4",
+        "webpack": "^5.0.0-rc.4",
+        "webpack-cli": "^3.3.12"
     }
 }
