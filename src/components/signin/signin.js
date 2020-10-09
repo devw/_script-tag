@@ -4,12 +4,18 @@ import { serialize } from "../../utils.js";
 import { signIn } from "../../services/storefront";
 
 const submitListener = async () => {
-    node.style.opacity = "0.2";
+    //TODO refactoring by using {target}; target.closest("form") and removing node
+    node.style.opacity = "0.1";
     const formData = serialize(node.querySelector("form"));
-    const result = await signIn(formData);
-    console.log("registerUser", result);
+    const { data } = await signIn(formData);
     node.style.opacity = "1";
+    isLoggedIn(data)
+        ? confirm("You are logged in")
+        : confirm("Wrong password/email, try again!");
 };
+
+const isLoggedIn = (data) =>
+    data?.customerAccessTokenCreate?.customerAccessToken?.accessToken;
 
 const init = (node) => {
     node.querySelector("[name=email]").value = sessionStorage.getItem("email");
@@ -19,4 +25,4 @@ const init = (node) => {
 const node = document.createElement("div");
 node.innerHTML = html;
 
-export const signinComponent = () => ({ dom: node, callback: init });
+export const signInComponent = () => ({ dom: node, callback: init });

@@ -6,3 +6,4 @@ import { changeComponent } from "./services/change-component";
 document.body.appendChild(popupComponent());
 
 window["AP"] = Object.assign(changeComponent, storefront, aws);
+changeComponent.email();
