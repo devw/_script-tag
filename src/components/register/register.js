@@ -2,6 +2,7 @@ import "./register.scss";
 import html from "./register.html";
 import { registerUser } from "../../services/storefront";
 import { serialize } from "../../utils.js";
+import { signIn } from "../../services/change-component";
 
 const submitListener = async () => {
     //TODO refactoring needed
@@ -9,10 +10,13 @@ const submitListener = async () => {
     const formData = serialize(node.querySelector("form"));
     formData.acceptsMarketing = formData.acceptsMarketing === "on";
     delete formData.confirmPassword;
-    const result = await registerUser(formData);
-    console.log("registerUser", result);
+    const response = await registerUser(formData);
+    console.log("registerUser", response);
     node.style.opacity = "1";
+    if (isRegistered) signIn();
 };
+
+const isRegistered = (response) => response?.data?.customerCreate?.customer?.id;
 
 const isFormFilled = (node) => {
     //TODO there are many other things to check (psw.length > 5, ...)

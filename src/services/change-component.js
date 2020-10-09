@@ -7,7 +7,7 @@ import { aws } from "./aws";
 export const changeComponent = {
     email: () => loadComponent(emailComponent()),
     register: () => loadComponent(registerComponent()),
-    signIn: () => loadComponent(signInComponent()),
+    signInPopUp: () => loadComponent(signInComponent()),
 };
 
 export const changeEmailView = async (email) => {
