@@ -81,4 +81,13 @@ div.account-popup__content {
 .account-popup__container button {
     padding: 10px;
     width: 100%;
+    background-color: #de7154;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.account-popup__container button:disabled,
+button[disabled] {
+    background-color: #c6c1be;
 }
