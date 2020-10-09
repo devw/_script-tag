@@ -1,8 +1,10 @@
 import "./register.scss";
 import html from "./register.hbs";
 import { registerUser } from "../../services/storefront";
-import { serialize } from "../../utils.js";
+import { serialize, isFormFilled } from "../../utils.js";
 import { signIn } from "../../services/change-component";
+
+//TODO there are many other things to check (psw.length > 5, ...)
 
 const submitListener = async () => {
     //TODO refactoring needed
@@ -15,13 +17,7 @@ const submitListener = async () => {
     signIn();
 };
 
-const isFormFilled = (node) => {
-    //TODO there are many other things to check (psw.length > 5, ...)
-    const inputs = serialize(node.querySelector("form"));
-    return Object.values(inputs).every((e) => e.length > 0);
-};
-
-const toggleBtn = (e) => {
+const toggleBtn = () => {
     const btn = node.querySelector("button");
     isFormFilled(node)
         ? btn.removeAttribute("disabled")
