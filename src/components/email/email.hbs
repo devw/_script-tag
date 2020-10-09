@@ -1,14 +1,18 @@
 <img class="account-popup__image" src="images/chien-chat.png">
 <div class="account-popup__title z-h4 heading">
-    {{title}}
+    {{login-register}}
 </div>
 <div class="account-popup__subtitle text t-4">
-    <p>{{subtitle}}</p>
+    <p>{{enter-your-email-to-continue}}</p>
 </div>
 <div class="account-popup__error" data-account-error=""></div>
 <div class="account-popup__inputs-container ">
-    <input class="input-text" name="email" placeholder="{{email_placeholder}}" type="email">
+    <input class="input-text" name="email" placeholder="{{your-email}}" type="email">
 </div>
 <div class="account-popup__button">
-    <button class="button button--full button--secondary" disabled="">{{signin_button_text}}</button>
+    <button class="button button--full button--secondary" name="signIn" disabled="">{{sign-in}}</button>
+</div>
+<br>
+<div class="account-popup__button">
+    <button class="button button--full button--secondary" name="signUp" disabled="">{{sign-up}}</button>
 </div>
