@@ -10,13 +10,10 @@ const submitListener = async () => {
     const formData = serialize(node.querySelector("form"));
     formData.acceptsMarketing = formData.acceptsMarketing === "on";
     delete formData.confirmPassword;
-    const response = await registerUser(formData);
-    console.log("registerUser", response);
+    await registerUser(formData);
     node.style.opacity = "1";
-    if (isRegistered) signIn();
+    signIn();
 };
-
-const isRegistered = (response) => response?.data?.customerCreate?.customer?.id;
 
 const isFormFilled = (node) => {
     //TODO there are many other things to check (psw.length > 5, ...)

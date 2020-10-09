@@ -9,9 +9,10 @@ const submitListener = async () => {
     const formData = serialize(node.querySelector("form"));
     const { data } = await signIn(formData);
     node.style.opacity = "1";
+    console.log("submitListener", data);
     isLoggedIn(data)
-        ? confirm("You are logged in")
-        : confirm("Wrong password/email, try again!");
+        ? alert("You are logged in") || node.parentNode.parentNode.remove() //TODO I should make it adding removing HTML classes
+        : alert("Wrong password/email, try again!");
 };
 
 const isLoggedIn = (data) =>
