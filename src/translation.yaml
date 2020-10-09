@@ -1,9 +1,19 @@
 en:
+    #TODO re-order list items alphabetically
     login-register: Login / Register
     enter-your-email-to-continue: Enter your email address to continue.
     your-email: Your email
     sign-in: Submit
     sign-up: Sign Up
+    fill-info-to-create-account: Fill in your information to create your Franklin account
+    your-first-name: Your first name
+    your-last-name: Your last name
+    your-password: Your password
+    confirm-your-password: Confirm your password
+    create-account: Create an account
+    subscribe-newsletter: I subscribe to the Franklin newsletter
+    login: Login
+    enter-email-psw-to-connect: Enter your email address and password to connect.
 
 fr:
     login-register: Connexion / Inscription
@@ -11,6 +21,15 @@ fr:
     your-email: Votre email
     sign-in: Se Connecter
     sign-up: S'inscrire
+    fill-info-to-create-account: Renseignez vos informations pour créer votre compte Franklin.
+    your-first-name: Votre nom
+    your-last-name: Your last name
+    your-password: Votre mot de passe
+    confirm-your-password: Confirmez votre mot de passe
+    create-account: Créer un compte
+    subscribe-newsletter: Je m'inscris à la newsletter Franklin
+    login: Connexion
+    enter-email-psw-to-connect: Renseignez votre adresse email et votre mot de passe pour vous connecter.
 
 it:
     login-register: Connessione / Iscrizione
@@ -18,3 +37,11 @@ it:
     your-email: La tua email
     sign-in: Invia
     sign-up: Registrati
+    fill-info-to-create-account: Inserisci le tue informazioni per creare il tuo account Franklin
+    your-first-name: Il tuo nome
+    your-last-name: Il tuo cognome
+    your-password: Conferma la tua password
+    create-account: Crea un account
+    subscribe-newsletter: Mi iscrivo alla newsletter di Franklin
+    login: Accesso
+    enter-email-psw-to-connect: Inserisci il tuo indirizzo email e la password per connetterti.

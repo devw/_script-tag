@@ -1,5 +1,5 @@
 import "./register.scss";
-import html from "./register.html";
+import html from "./register.hbs";
 import { registerUser } from "../../services/storefront";
 import { serialize } from "../../utils.js";
 import { signIn } from "../../services/change-component";

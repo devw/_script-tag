@@ -1,5 +1,5 @@
 import "./signin.scss";
-import html from "./signin.html";
+import html from "./signin.hbs";
 import { serialize } from "../../utils.js";
 import { signIn } from "../../services/storefront";
 

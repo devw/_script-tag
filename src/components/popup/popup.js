@@ -1,5 +1,5 @@
 import "./popup.scss";
-import html from "./popup.html";
+import html from "./popup.hbs";
 
 const element = document.createElement("div");
 element.innerHTML = html;
