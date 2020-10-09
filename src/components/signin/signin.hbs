@@ -1,21 +1,22 @@
 <div class="account-popup__container">
     <img class="account-popup__image" src="images/chat.png">
     <div class="account-popup__title z-h4 heading">
-        Connexion.
+        {{login}}
     </div>
     <div class="account-popup__subtitle text t-4">
-        <p>Renseignez&nbsp;votre adresse email et votre mot de passe&nbsp;pour vous connecter.</p>
+        <p>{{enter-email-psw-to-connect}}</p>
     </div>
     <div class="account-popup__error" data-account-error=""></div>
     <form action="javascript:void(0);" class="account-popup__inputs-container">
-        <input class="input-text" data-type="email" name="email" placeholder="Votre email" type="email">
-        <input class="input-text" data-signin-password="" name="password" placeholder="Votre mot de passe" type="password">
+        <input class="input-text" data-type="email" name="email" placeholder="{{your-email}}" type="email">
+        <input class="input-text" data-signin-password="" name="password" placeholder="{{your-password}}"
+            type="password">
         <div class="account-popup__button">
-            <button class="button button--full button--secondary">Se connecter</button>
+            <button class="button button--full button--secondary">{{sign-in}}</button>
         </div>
     </form>
     <!-- TODO -->
-        <!-- <div class="account-popup__mandatory-container align-left">
+    <!-- <div class="account-popup__mandatory-container align-left">
         <div class="text t-6 underline pointer" data-signin-forgot="">
             Mot de passe oublié
         </div>

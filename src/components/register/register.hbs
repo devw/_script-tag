@@ -1,0 +1,24 @@
+<img class="account-popup__image" src="images/Chien-16.png">
+<div class="account-popup__title z-h4 heading">
+    Création de compte.
+</div>
+<div class="account-popup__subtitle text t-4">
+    <p>{{fill-info-to-create-account}}</p>
+</div>
+<div class="account-popup__error" data-account-error=""></div>
+<form action="javascript:void(0);" class="account-popup__inputs-container " data-register-form="">
+    <input class="input-text" name="email" placeholder="{{your-email}}" type="email">
+    <input class="input-text" name="firstName" placeholder="{{your-first-name}}" type="text">
+    <input class="input-text" name="lastName" placeholder="{{your-last-name}}" type="text">
+    <input class="input-text" name="password" placeholder="{{your-password}}" type="password">
+    <input class="input-text" name="confirmPassword" placeholder="{{confirm-your-password}}" type="password">
+    <div class="account-popup__button">
+        <button class="button button--full button--secondary button--disabled" disabled="">{{create-account}}</button>
+    </div>
+    <div class="account-popup__checkbox-container">
+        <input class="account-popup__checkbox" data-register-newscheck="" name="acceptsMarketing" type="checkbox">
+        <div class="text t-5 uppercase pointer" data-register-newstext="">
+            {{subscribe-newsletter}}
+        </div>
+    </div>
+</form>
