@@ -2,10 +2,9 @@
 
 ## Development
 
-1 Clone the repository
+1. Clone the repository
 ```
 git clone git@github.com:devw/script-tag.git 
-cd script-tag/
 ```
 
 2. Edit/change the variables set in `config.js` and `.env` file.
