@@ -3,7 +3,7 @@
 }
 
 div.account-popup {
-    width: 100%;
+    width: 70%;
     height: 100%;
     background-color: var(--background-color);
     position: absolute;
@@ -12,6 +12,7 @@ div.account-popup {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    right: 0;
 }
 
 div.account-popup__close-popup {

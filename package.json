@@ -8,7 +8,7 @@
     "scripts": {
         "test": "jest",
         "prebuild": "rm -rf docs",
-        "build": "webpack; mv dist docs; git checkout docs/index.html",
+        "build": "webpack; mv dist docs; cp public/index.html docs/index.html",
         "start": "node src/services/shopifyAPI.js"
     },
     "dependencies": {
