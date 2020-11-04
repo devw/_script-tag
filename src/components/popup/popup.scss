@@ -1,8 +1,10 @@
 :root {
     --background-color: rgba(100, 91, 91, 0.7);
+    --main-text-color: #111;
 }
 
 div.account-popup {
+    color: var(--main-text-color);
     width: 70%;
     height: 100%;
     background-color: var(--background-color);

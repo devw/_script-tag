@@ -3,27 +3,20 @@ import html from "./custom.html";
 
 const $ = document.querySelector.bind(document);
 
-const json = {
-    "background-color": "rgba(0, 91, 91, 0.7)",
-    "main-bg-color": "#aaa",
-    "font-size": "40px",
-};
-
 const setStyle = (e) => {
-    document.documentElement.style.setProperty(
-        `--${e}`,
-        $("[name='custom-background-color']").value
-    );
+    const p = `--${e}`;
+    const v = $(`[name='${e}']`).value;
+    document.documentElement.style.setProperty(p, v);
 };
 
-const applyJsonStyle = () => {
-    Reflect.ownKeys(json).forEach(setStyle);
-};
+const getInputNames = (e) =>
+    Array.from(e.querySelectorAll("input")).map((e) => e.name);
 
 const init = () => {
-    document
-        .querySelector(".custom-submit")
-        .addEventListener("click", applyJsonStyle);
+    $("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        getInputNames(e.target).forEach((e) => setStyle(e));
+    });
 };
 
 const node = document.createElement("div");
